@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="edu.aku.hassannaqvi.naunehal_remidline">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+
+    <application
+        android:name="edu.aku.hassannaqvi.naunehal_remidline.core.MainApp"
+        android:allowBackup="false"
+        android:icon="@drawable/naunehal_baseline"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/naunehal_baseline"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.SplashscreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.login_activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.SyncActivity"
+            android:label="Download and Upload Data Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.ChildrenListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.SelectedChildrenListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section082SEActivity"
+            android:label="@string/se08_headding"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.EndingActivity"
+            android:label="ِانٹرویو اسٹیٹس"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section081SEActivity"
+            android:label="@string/se08_headding"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section07CVActivity"
+            android:label="@string/cv07_headding"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section061BFActivity"
+            android:label="@string/bf06_headding"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section05PDActivity"
+            android:label="@string/pd05_headding"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section04IMActivity"
+            android:label="@string/im04_headding"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section03CSActivity"
+            android:label="@string/cs03_headding"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section02CBActivity"
+            android:label="@string/cb02_headding"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section01HHActivity"
+            android:label="@string/hh01_headding"
+            android:parentActivityName="edu.aku.hassannaqvi.naunehal_remidline.ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.IdentificationSectionActivity"
+            android:parentActivityName="edu.aku.hassannaqvi.naunehal_remidline.ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeUrdu" />
+
+        <activity android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.MainActivity" />
+
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.database.AndroidDatabaseManager"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.TakePhoto"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.list_activity.FormsReportCluster"
+            android:label="Forms Report"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="edu.aku.hassannaqvi.naunehal_remidline.ui.list_activity.FormsReportDate"
+            android:label="Forms Report"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+    </application>
+
+</manifest>

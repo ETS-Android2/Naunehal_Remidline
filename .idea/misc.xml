@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_identification_section.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_section_01hh.xml" value="0.5458015267175572" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_section_02cb.xml" value="0.3651685393258427" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_section_03cs.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_section_04im.xml" value="0.3176366059529098" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_section_05pd.xml" value="0.5458015267175572" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_section_061bf.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_section_07cv.xml" value="0.1432681242807825" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_section_081se.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_section_082se.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_BL/app/src/main/res/layout/activity_selected_children_list.xml" value="0.53125" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/drawable-v24/camera.xml" value="0.41328125" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/drawable/open_form.xml" value="0.5828125" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_camera.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_children_list.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_ending.xml" value="0.3890625" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_identification_section.xml" value="0.52125" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_section_01hh.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_section_02cb.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_section_03cs.xml" value="0.52125" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_section_04im.xml" value="0.4" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_section_05pd.xml" value="0.536" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_section_061bf.xml" value="0.5175" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_section_082se.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_selected_children_list.xml" value="0.54125" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/activity_sync.xml" value="0.5458015267175572" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/end_section_dialog.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/item_dialog.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/item_dialog_2.xml" value="0.55859375" />
+        <entry key="..\:/Users/abdul.sajid/Desktop/ANDROID APPS/Android/Naunehal_ML/app/src/main/res/layout/selected_child_view.xml" value="0.55859375" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+</project>
