@@ -36,7 +36,7 @@ class Section02CBActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_02cb)
-        bi.callback = this
+        bi.cinfo = MainApp.childInformation
         setSupportActionBar(bi.toolbar)
 
         // TODO: After itemClick on childlist fetchChildByUID() from TABLE_FAMILY and update contents MainApp.Family before entering this activity.
@@ -121,44 +121,6 @@ class Section02CBActivity : AppCompatActivity() {
                     Clear.clearAllFields(bi.fldGrpCVcb11, true)
                     bi.cb1413.isEnabled = false
                     bi.fldGrpCVcb11.visibility = View.VISIBLE
-                }
-            }
-        }
-
-        bi.cb14.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
-            when (i) {
-                bi.cb1496.id -> {
-                    bi.cb1496x.visibility = View.VISIBLE
-                }
-                else -> {
-                    bi.cb1496x.visibility = View.GONE
-                    bi.cb1496x.text = null
-                }
-            }
-        }
-
-
-        bi.cb1598.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                bi.cb15.isEnabled = false
-                bi.cb15.text = null
-                bi.cvcb17.visibility = View.VISIBLE
-            } else {
-                bi.cb15.isEnabled = true
-                Clear.clearAllFields(bi.cvcb17)
-                bi.cvcb17.visibility = View.GONE
-            }
-        }
-
-
-        bi.cb10.setOnCheckedChangeListener { radioGroup: RadioGroup?, i: Int ->
-            when (i) {
-                bi.cb1096.id -> {
-                    bi.cb1096x.visibility = View.VISIBLE
-                }
-                else -> {
-                    bi.cb1096x.visibility = View.GONE
-                    bi.cb1096x.text = null
                 }
             }
         }
