@@ -940,6 +940,7 @@ public class Form extends BaseObservable {
 
     public void setHh17(String hh17) {
         this.hh17 = hh17;
+        setHh1796x(hh17.equals("96") ? this.hh1796x : "");
         notifyPropertyChanged(BR.hh17);
     }
 
@@ -980,6 +981,7 @@ public class Form extends BaseObservable {
 
     public void setHh20(String hh20) {
         this.hh20 = hh20;
+        setHh2096x(hh20.equals("96") ? this.hh2096x : "");
         notifyPropertyChanged(BR.hh20);
     }
 

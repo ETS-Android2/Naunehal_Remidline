@@ -436,15 +436,6 @@ class Section01HHActivity : AppCompatActivity() {
         }
 
 
-        form.hh01 = when {
-            bi.hh01.text.toString().trim().isNotEmpty() -> bi.hh01.text.toString()
-            else -> "-1"
-        }
-
-        form.hh0201 = when {
-            bi.hh0201.text.toString().trim().isNotEmpty() -> bi.hh0201.text.toString()
-            else -> "-1"
-        }
 
         /* form.setHh0202(bi.hh0202.getText().toString())
          form.setHh03(bi.hh03.getText().toString())
@@ -456,12 +447,6 @@ class Section01HHActivity : AppCompatActivity() {
         form.hh06 = bi.hh06.selectedItem.toString()
 
 
-
-        form.hh07 = when {
-            bi.hh07.text.toString().trim().isNotEmpty() -> bi.hh07.text.toString()
-            else -> "-1"
-        }
-
         form.hh08 = when {
             bi.hh08.text.toString().trim().isNotEmpty() -> bi.hh08.text.toString()
             else -> "-1"
@@ -472,16 +457,7 @@ class Section01HHActivity : AppCompatActivity() {
             else -> "-1"
         }
 
-        form.hh10 = when {
-            bi.hh10.text.toString().trim().isNotEmpty() -> bi.hh10.text.toString()
-            else -> "-1"
-        }
 
-        form.hh11 = when {
-            bi.hh1101.isChecked -> "1"
-            bi.hh1102.isChecked -> "2"
-            else -> "-1"
-        }
 
         form.hh12 = when {
             bi.hh12.text.toString().trim().isNotEmpty() -> bi.hh12.text.toString()
