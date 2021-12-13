@@ -7,8 +7,9 @@
         <import type="android.view.View" />
 
         <variable
-            name="callback"
-            type="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section04IMActivity" />
+            name="imun"
+            type="edu.aku.hassannaqvi.naunehal_remidline.models.Immunization" />
+
     </data>
 
 
@@ -18,16 +19,8 @@
         android:orientation="vertical">
 
 
-        <!-- CUSTOM TOOLBAR -->
-        <!--     <androidx.appcompat.widget.Toolbar
-                 android:id="@+id/toolbar"
-                 android:layout_width="match_parent"
-                 android:layout_height="?attr/actionBarSize"
-                 android:background="?attr/colorPrimary"
-                 android:elevation="4dp"
-                 android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
 
+        <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             style="@null"
@@ -35,9 +28,9 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:elevation="4dp"
-            app:titleTextAppearance="@style/topBarStyle"
+            app:titleTextAppearance="@style/topBarStyle" />
 
-            />
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -98,6 +91,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{imun.im01.equals(`1`)}"
+                                android:onClick="@{()->imun.setIm01(`1`)}"
                                 android:text="@string/im0101" />
 
                             <RadioButton
@@ -105,6 +100,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{imun.im01.equals(`2`)}"
+                                android:onClick="@{()->imun.setIm01(`2`)}"
                                 android:text="@string/im0102" />
 
                         </RadioGroup>
@@ -160,6 +157,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{imun.im02.equals(`1`)}"
+                                android:onClick="@{()->imun.setIm02(`1`)}"
                                 android:text="@string/im0201" />
 
                             <RadioButton
@@ -167,6 +166,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{imun.im02.equals(`2`)}"
+                                android:onClick="@{()->imun.setIm02(`2`)}"
                                 android:text="@string/im0202" />
 
                         </RadioGroup>
@@ -214,45 +215,56 @@
                                 android:id="@+id/im0301"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-
+                                android:checked="@{imun.im03.equals(`1`)}"
+                                android:onClick="@{()->imun.setIm03(`1`)}"
                                 android:text="@string/im0301" />
 
                             <RadioButton
                                 android:id="@+id/im0302"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked="@{imun.im03.equals(`2`)}"
+                                android:onClick="@{()->imun.setIm03(`2`)}"
                                 android:text="@string/im0302" />
 
                             <RadioButton
                                 android:id="@+id/im0303"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked="@{imun.im03.equals(`3`)}"
+                                android:onClick="@{()->imun.setIm03(`3`)}"
                                 android:text="@string/im0303" />
 
                             <RadioButton
                                 android:id="@+id/im0304"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked="@{imun.im03.equals(`4`)}"
+                                android:onClick="@{()->imun.setIm03(`4`)}"
                                 android:text="@string/im0304" />
 
                             <RadioButton
                                 android:id="@+id/im0305"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-
+                                android:checked="@{imun.im03.equals(`5`)}"
+                                android:onClick="@{()->imun.setIm03(`5`)}"
                                 android:text="@string/im0305" />
 
                             <RadioButton
                                 android:id="@+id/im0306"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-
+                                android:checked="@{imun.im03.equals(`6`)}"
+                                android:onClick="@{()->imun.setIm03(`6`)}"
                                 android:text="@string/im0306" />
 
                             <RadioButton
                                 android:id="@+id/im0396"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked="@{imun.im03.equals(`96`)}"
+                                android:onClick="@{()->imun.setIm03(`96`)}"
                                 android:text="@string/im0396" />
 
                             <EditText
@@ -262,7 +274,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/im0396"
                                 android:tag="im03096"
-                                android:visibility='@{im0396.checked ? View.VISIBLE : View.GONE}' />
+                                android:text="@={imun.im0396x}"
+                                android:visibility="@{imun.im03.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 
@@ -317,7 +330,6 @@
                                     android:layout_weight="1"
                                     android:text="@string/im04dd" />
 
-
                                 <TextView
                                     style="@style/sub_labels"
                                     android:layout_width="0dp"
@@ -325,14 +337,12 @@
                                     android:layout_weight="1"
                                     android:text="@string/im04mm" />
 
-
                                 <TextView
                                     style="@style/sub_labels"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:text="@string/im04yy" />
-
 
                             </LinearLayout>
 
@@ -348,6 +358,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
+                                    android:text="@={imun.im04dd}"
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
@@ -355,13 +366,13 @@
                                     app:minValue="1"
                                     app:type="range" />
 
-
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im04mm"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
+                                    android:text="@={imun.im04mm}"
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
@@ -369,13 +380,13 @@
                                     app:minValue="1"
                                     app:type="range" />
 
-
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im04yy"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
+                                    android:text="@={imun.im04yy}"
                                     android:hint="####"
                                     android:inputType="number"
                                     app:maxValue="0"
@@ -414,7 +425,7 @@
                                     android:layout_marginEnd="8dp"
                                     android:background="@drawable/action_button"
                                     android:fontFamily="@font/roboto"
-                                    android:onClick="@{(v) -> callback.takePhoto(1)}"
+                                    android:onClick="takePhoto"
                                     android:paddingStart="16dp"
                                     android:paddingEnd="16dp"
                                     android:text="Take Front Photo"
@@ -429,7 +440,7 @@
                                     android:layout_marginEnd="8dp"
                                     android:background="@drawable/action_button"
                                     android:fontFamily="@font/roboto"
-                                    android:onClick="@{(v) -> callback.takePhoto(2)}"
+                                    android:onClick="takePhoto"
                                     android:paddingStart="16dp"
                                     android:paddingEnd="16dp"
                                     android:text="Take Back Photo"
@@ -567,6 +578,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:gravity="center"
+                                        android:text="@={imun.im0501dd}"
                                         android:hint="##"
                                         android:inputType="number"
                                         android:maxLength="2"
@@ -581,6 +593,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:gravity="center"
+                                        android:text="@={imun.im0501mm}"
                                         android:hint="##"
                                         android:inputType="number"
                                         android:maxLength="2"
@@ -594,6 +607,7 @@
                                         android:layout_height="match_parent"
                                         android:layout_weight="1"
                                         android:gravity="center"
+                                        android:text="@={imun.im0501yy}"
                                         android:hint="20##"
                                         android:inputType="number"
                                         android:maxLength="4"

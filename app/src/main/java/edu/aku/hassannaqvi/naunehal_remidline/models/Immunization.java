@@ -408,6 +408,7 @@ public class Immunization extends BaseObservable {
 
     public void setIm03(String im03) {
         this.im03 = im03;
+        setIm0396x(im03.equals("96") ? this.im0396x : "");
         notifyPropertyChanged(BR.im03);
     }
 
@@ -418,6 +419,7 @@ public class Immunization extends BaseObservable {
 
     public void setIm0396x(String im0396x) {
         this.im0396x = im0396x;
+        notifyPropertyChanged(BR.im0396x);
     }
 
 

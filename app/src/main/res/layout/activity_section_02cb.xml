@@ -278,7 +278,6 @@
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
-                                android:onTextChanged="cb04yyOnTextChanged"
                                 android:text="@={cinfo.cb04yy}"
                                 app:defaultValue="9998"
                                 app:maxValue="2021"

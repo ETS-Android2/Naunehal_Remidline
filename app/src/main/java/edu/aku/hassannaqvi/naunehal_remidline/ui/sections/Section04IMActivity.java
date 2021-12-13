@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.naunehal_remidline.ui.sections;
 
 import static edu.aku.hassannaqvi.naunehal_remidline.core.MainApp.form;
+import static edu.aku.hassannaqvi.naunehal_remidline.core.MainApp.immunization;
 import static edu.aku.hassannaqvi.naunehal_remidline.utils.AppUtilsKt.contextEndActivity;
 import static edu.aku.hassannaqvi.naunehal_remidline.utils.extension.ActivityExtKt.gotoActivity;
 
@@ -57,15 +58,13 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_04im);
-        bi.setCallback(this);
         setSupportActionBar(bi.toolbar);
         info = Section03CSActivity.selectedChildInfo;
 
-        MainApp.immunization = new Immunization();
-        bi.setCallback(this);
+        immunization = new Immunization();
         setSupportActionBar(bi.toolbar);
         setTitle(R.string.im1_title1);
-        //bi.setForm(MainApp.immunization);
+        bi.setImun(immunization);
         setupSkips();
         setupTextWatchers();
 
@@ -85,33 +84,33 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
     // Only in First Section of every Table.
     private void saveDraft() {
         bi.btnContinue.setEnabled(false);
-        MainApp.immunization.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        MainApp.immunization.setUuid(MainApp.form.getUid());
-        MainApp.immunization.setUserName(MainApp.user.getUserName());
-        MainApp.immunization.setDcode(MainApp.form.getDcode());
-        MainApp.immunization.setUcode(MainApp.form.getUcode());
-        MainApp.immunization.setCluster(MainApp.form.getCluster());
-        MainApp.immunization.setHhno(MainApp.form.getHhno());
-        MainApp.immunization.setDeviceId(MainApp.appInfo.getDeviceID());
-        MainApp.immunization.setDeviceTag(MainApp.appInfo.getTagName());
-        MainApp.immunization.setAppver(MainApp.appInfo.getAppVersion());
-        MainApp.immunization.setSerial(info.getCb01());
-        MainApp.immunization.setFmuid(info.getUid());
-        MainApp.immunization.setChildname(info.getCb02());
-        MainApp.immunization.setMothername(info.getCb07());
+        immunization.setSysDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        immunization.setUuid(MainApp.form.getUid());
+        immunization.setUserName(MainApp.user.getUserName());
+        immunization.setDcode(MainApp.form.getDcode());
+        immunization.setUcode(MainApp.form.getUcode());
+        immunization.setCluster(MainApp.form.getCluster());
+        immunization.setHhno(MainApp.form.getHhno());
+        immunization.setDeviceId(MainApp.appInfo.getDeviceID());
+        immunization.setDeviceTag(MainApp.appInfo.getTagName());
+        immunization.setAppver(MainApp.appInfo.getAppVersion());
+        immunization.setSerial(info.getCb01());
+        immunization.setFmuid(info.getUid());
+        immunization.setChildname(info.getCb02());
+        immunization.setMothername(info.getCb07());
 
-        MainApp.immunization.setPhotoFront(bi.frontFileName.getText().toString());
-        MainApp.immunization.setPhotoBack(bi.backFileName.getText().toString());
+        immunization.setPhotoFront(bi.frontFileName.getText().toString());
+        immunization.setPhotoBack(bi.backFileName.getText().toString());
 
-        MainApp.immunization.setIm01(bi.im0101.isChecked() ? "1"
+        immunization.setIm01(bi.im0101.isChecked() ? "1"
                 : bi.im0102.isChecked() ? "2"
                 : "-1");
 
-        MainApp.immunization.setIm02(bi.im0201.isChecked() ? "1"
+        immunization.setIm02(bi.im0201.isChecked() ? "1"
                 : bi.im0202.isChecked() ? "2"
                 : "-1");
 
-        MainApp.immunization.setIm03(bi.im0301.isChecked() ? "1"
+        immunization.setIm03(bi.im0301.isChecked() ? "1"
                 : bi.im0302.isChecked() ? "2"
                 : bi.im0303.isChecked() ? "3"
                 : bi.im0304.isChecked() ? "4"
@@ -120,144 +119,144 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
                 : bi.im0396.isChecked() ? "96"
                 : "-1");
 
-        MainApp.immunization.setIm0396x(bi.im03096x.getText().toString().isEmpty() ? "-1" : bi.im03096x.getText().toString());
-        MainApp.immunization.setIm04dd(bi.im04dd.getText().toString().isEmpty() ? "-1" : bi.im04dd.getText().toString());
-        MainApp.immunization.setIm04mm(bi.im04mm.getText().toString().isEmpty() ? "-1" : bi.im04mm.getText().toString());
-        MainApp.immunization.setIm04yy(bi.im04yy.getText().toString().isEmpty() ? "-1" : bi.im04yy.getText().toString());
-        MainApp.immunization.setIm0501dd(bi.im0501dd.getText().toString().isEmpty() ? "-1" : bi.im0501dd.getText().toString());
-        MainApp.immunization.setIm0501mm(bi.im0501mm.getText().toString().isEmpty() ? "-1" : bi.im0501mm.getText().toString());
-        MainApp.immunization.setIm0501yy(bi.im0501yy.getText().toString().isEmpty() ? "-1" : bi.im0501yy.getText().toString());
-        MainApp.immunization.setIm0502dd(bi.im0502dd.getText().toString().isEmpty() ? "-1" : bi.im0502dd.getText().toString());
-        MainApp.immunization.setIm0502mm(bi.im0502mm.getText().toString().isEmpty() ? "-1" : bi.im0502mm.getText().toString());
-        MainApp.immunization.setIm0502yy(bi.im0502yy.getText().toString().isEmpty() ? "-1" : bi.im0502yy.getText().toString());
-        MainApp.immunization.setIm0503dd(bi.im0503dd.getText().toString().isEmpty() ? "-1" : bi.im0503dd.getText().toString());
-        MainApp.immunization.setIm0503mm(bi.im0503mm.getText().toString().isEmpty() ? "-1" : bi.im0503mm.getText().toString());
-        MainApp.immunization.setIm0503yy(bi.im0503yy.getText().toString().isEmpty() ? "-1" : bi.im0503yy.getText().toString());
-        MainApp.immunization.setIm0504dd(bi.im0504dd.getText().toString().isEmpty() ? "-1" : bi.im0504dd.getText().toString());
-        MainApp.immunization.setIm0504mm(bi.im0504mm.getText().toString().isEmpty() ? "-1" : bi.im0504mm.getText().toString());
-        MainApp.immunization.setIm0504yy(bi.im0504yy.getText().toString().isEmpty() ? "-1" : bi.im0504yy.getText().toString());
-        MainApp.immunization.setIm0505dd(bi.im0505dd.getText().toString().isEmpty() ? "-1" : bi.im0505dd.getText().toString());
-        MainApp.immunization.setIm0505mm(bi.im0505mm.getText().toString().isEmpty() ? "-1" : bi.im0505mm.getText().toString());
-        MainApp.immunization.setIm0505yy(bi.im0505yy.getText().toString().isEmpty() ? "-1" : bi.im0505yy.getText().toString());
-        MainApp.immunization.setIm0506dd(bi.im0506dd.getText().toString().isEmpty() ? "-1" : bi.im0506dd.getText().toString());
-        MainApp.immunization.setIm0506mm(bi.im0506mm.getText().toString().isEmpty() ? "-1" : bi.im0506mm.getText().toString());
-        MainApp.immunization.setIm0506yy(bi.im0506yy.getText().toString().isEmpty() ? "-1" : bi.im0506yy.getText().toString());
-        MainApp.immunization.setIm0507dd(bi.im0507dd.getText().toString().isEmpty() ? "-1" : bi.im0507dd.getText().toString());
-        MainApp.immunization.setIm0507mm(bi.im0507mm.getText().toString().isEmpty() ? "-1" : bi.im0507mm.getText().toString());
-        MainApp.immunization.setIm0507yy(bi.im0507yy.getText().toString().isEmpty() ? "-1" : bi.im0507yy.getText().toString());
-        MainApp.immunization.setIm0508dd(bi.im0508dd.getText().toString().isEmpty() ? "-1" : bi.im0508dd.getText().toString());
-        MainApp.immunization.setIm0508mm(bi.im0508mm.getText().toString().isEmpty() ? "-1" : bi.im0508mm.getText().toString());
-        MainApp.immunization.setIm0508yy(bi.im0508yy.getText().toString().isEmpty() ? "-1" : bi.im0508yy.getText().toString());
-        MainApp.immunization.setIm0509dd(bi.im0509dd.getText().toString().isEmpty() ? "-1" : bi.im0509dd.getText().toString());
-        MainApp.immunization.setIm0509mm(bi.im0509mm.getText().toString().isEmpty() ? "-1" : bi.im0509mm.getText().toString());
-        MainApp.immunization.setIm0509yy(bi.im0509yy.getText().toString().isEmpty() ? "-1" : bi.im0509yy.getText().toString());
-        MainApp.immunization.setIm0510dd(bi.im0510dd.getText().toString().isEmpty() ? "-1" : bi.im0510dd.getText().toString());
-        MainApp.immunization.setIm0510mm(bi.im0510mm.getText().toString().isEmpty() ? "-1" : bi.im0510mm.getText().toString());
-        MainApp.immunization.setIm0510yy(bi.im0510yy.getText().toString().isEmpty() ? "-1" : bi.im0510yy.getText().toString());
-        MainApp.immunization.setIm0511dd(bi.im0511dd.getText().toString().isEmpty() ? "-1" : bi.im0511dd.getText().toString());
-        MainApp.immunization.setIm0511mm(bi.im0511mm.getText().toString().isEmpty() ? "-1" : bi.im0511mm.getText().toString());
-        MainApp.immunization.setIm0511yy(bi.im0511yy.getText().toString().isEmpty() ? "-1" : bi.im0511yy.getText().toString());
-        MainApp.immunization.setIm0512dd(bi.im0512dd.getText().toString().isEmpty() ? "-1" : bi.im0512dd.getText().toString());
-        MainApp.immunization.setIm0512mm(bi.im0512mm.getText().toString().isEmpty() ? "-1" : bi.im0512mm.getText().toString());
-        MainApp.immunization.setIm0512yy(bi.im0512yy.getText().toString().isEmpty() ? "-1" : bi.im0512yy.getText().toString());
-        MainApp.immunization.setIm0513dd(bi.im0513dd.getText().toString().isEmpty() ? "-1" : bi.im0513dd.getText().toString());
-        MainApp.immunization.setIm0513mm(bi.im0513mm.getText().toString().isEmpty() ? "-1" : bi.im0513mm.getText().toString());
-        MainApp.immunization.setIm0513yy(bi.im0513yy.getText().toString().isEmpty() ? "-1" : bi.im0513yy.getText().toString());
-        MainApp.immunization.setIm0514dd(bi.im0514dd.getText().toString().isEmpty() ? "-1" : bi.im0514dd.getText().toString());
-        MainApp.immunization.setIm0514mm(bi.im0514mm.getText().toString().isEmpty() ? "-1" : bi.im0514mm.getText().toString());
-        MainApp.immunization.setIm0514yy(bi.im0514yy.getText().toString().isEmpty() ? "-1" : bi.im0514yy.getText().toString());
-        MainApp.immunization.setIm0515dd(bi.im0515dd.getText().toString().isEmpty() ? "-1" : bi.im0515dd.getText().toString());
-        MainApp.immunization.setIm0515mm(bi.im0515mm.getText().toString().isEmpty() ? "-1" : bi.im0515mm.getText().toString());
-        MainApp.immunization.setIm0515yy(bi.im0515yy.getText().toString().isEmpty() ? "-1" : bi.im0515yy.getText().toString());
-        MainApp.immunization.setIm0516dd(bi.im0516dd.getText().toString().isEmpty() ? "-1" : bi.im0516dd.getText().toString());
-        MainApp.immunization.setIm0516mm(bi.im0516mm.getText().toString().isEmpty() ? "-1" : bi.im0516mm.getText().toString());
-        MainApp.immunization.setIm0516yy(bi.im0516yy.getText().toString().isEmpty() ? "-1" : bi.im0516yy.getText().toString());
+        immunization.setIm0396x(bi.im03096x.getText().toString().isEmpty() ? "-1" : bi.im03096x.getText().toString());
+        immunization.setIm04dd(bi.im04dd.getText().toString().isEmpty() ? "-1" : bi.im04dd.getText().toString());
+        immunization.setIm04mm(bi.im04mm.getText().toString().isEmpty() ? "-1" : bi.im04mm.getText().toString());
+        immunization.setIm04yy(bi.im04yy.getText().toString().isEmpty() ? "-1" : bi.im04yy.getText().toString());
+        immunization.setIm0501dd(bi.im0501dd.getText().toString().isEmpty() ? "-1" : bi.im0501dd.getText().toString());
+        immunization.setIm0501mm(bi.im0501mm.getText().toString().isEmpty() ? "-1" : bi.im0501mm.getText().toString());
+        immunization.setIm0501yy(bi.im0501yy.getText().toString().isEmpty() ? "-1" : bi.im0501yy.getText().toString());
+        immunization.setIm0502dd(bi.im0502dd.getText().toString().isEmpty() ? "-1" : bi.im0502dd.getText().toString());
+        immunization.setIm0502mm(bi.im0502mm.getText().toString().isEmpty() ? "-1" : bi.im0502mm.getText().toString());
+        immunization.setIm0502yy(bi.im0502yy.getText().toString().isEmpty() ? "-1" : bi.im0502yy.getText().toString());
+        immunization.setIm0503dd(bi.im0503dd.getText().toString().isEmpty() ? "-1" : bi.im0503dd.getText().toString());
+        immunization.setIm0503mm(bi.im0503mm.getText().toString().isEmpty() ? "-1" : bi.im0503mm.getText().toString());
+        immunization.setIm0503yy(bi.im0503yy.getText().toString().isEmpty() ? "-1" : bi.im0503yy.getText().toString());
+        immunization.setIm0504dd(bi.im0504dd.getText().toString().isEmpty() ? "-1" : bi.im0504dd.getText().toString());
+        immunization.setIm0504mm(bi.im0504mm.getText().toString().isEmpty() ? "-1" : bi.im0504mm.getText().toString());
+        immunization.setIm0504yy(bi.im0504yy.getText().toString().isEmpty() ? "-1" : bi.im0504yy.getText().toString());
+        immunization.setIm0505dd(bi.im0505dd.getText().toString().isEmpty() ? "-1" : bi.im0505dd.getText().toString());
+        immunization.setIm0505mm(bi.im0505mm.getText().toString().isEmpty() ? "-1" : bi.im0505mm.getText().toString());
+        immunization.setIm0505yy(bi.im0505yy.getText().toString().isEmpty() ? "-1" : bi.im0505yy.getText().toString());
+        immunization.setIm0506dd(bi.im0506dd.getText().toString().isEmpty() ? "-1" : bi.im0506dd.getText().toString());
+        immunization.setIm0506mm(bi.im0506mm.getText().toString().isEmpty() ? "-1" : bi.im0506mm.getText().toString());
+        immunization.setIm0506yy(bi.im0506yy.getText().toString().isEmpty() ? "-1" : bi.im0506yy.getText().toString());
+        immunization.setIm0507dd(bi.im0507dd.getText().toString().isEmpty() ? "-1" : bi.im0507dd.getText().toString());
+        immunization.setIm0507mm(bi.im0507mm.getText().toString().isEmpty() ? "-1" : bi.im0507mm.getText().toString());
+        immunization.setIm0507yy(bi.im0507yy.getText().toString().isEmpty() ? "-1" : bi.im0507yy.getText().toString());
+        immunization.setIm0508dd(bi.im0508dd.getText().toString().isEmpty() ? "-1" : bi.im0508dd.getText().toString());
+        immunization.setIm0508mm(bi.im0508mm.getText().toString().isEmpty() ? "-1" : bi.im0508mm.getText().toString());
+        immunization.setIm0508yy(bi.im0508yy.getText().toString().isEmpty() ? "-1" : bi.im0508yy.getText().toString());
+        immunization.setIm0509dd(bi.im0509dd.getText().toString().isEmpty() ? "-1" : bi.im0509dd.getText().toString());
+        immunization.setIm0509mm(bi.im0509mm.getText().toString().isEmpty() ? "-1" : bi.im0509mm.getText().toString());
+        immunization.setIm0509yy(bi.im0509yy.getText().toString().isEmpty() ? "-1" : bi.im0509yy.getText().toString());
+        immunization.setIm0510dd(bi.im0510dd.getText().toString().isEmpty() ? "-1" : bi.im0510dd.getText().toString());
+        immunization.setIm0510mm(bi.im0510mm.getText().toString().isEmpty() ? "-1" : bi.im0510mm.getText().toString());
+        immunization.setIm0510yy(bi.im0510yy.getText().toString().isEmpty() ? "-1" : bi.im0510yy.getText().toString());
+        immunization.setIm0511dd(bi.im0511dd.getText().toString().isEmpty() ? "-1" : bi.im0511dd.getText().toString());
+        immunization.setIm0511mm(bi.im0511mm.getText().toString().isEmpty() ? "-1" : bi.im0511mm.getText().toString());
+        immunization.setIm0511yy(bi.im0511yy.getText().toString().isEmpty() ? "-1" : bi.im0511yy.getText().toString());
+        immunization.setIm0512dd(bi.im0512dd.getText().toString().isEmpty() ? "-1" : bi.im0512dd.getText().toString());
+        immunization.setIm0512mm(bi.im0512mm.getText().toString().isEmpty() ? "-1" : bi.im0512mm.getText().toString());
+        immunization.setIm0512yy(bi.im0512yy.getText().toString().isEmpty() ? "-1" : bi.im0512yy.getText().toString());
+        immunization.setIm0513dd(bi.im0513dd.getText().toString().isEmpty() ? "-1" : bi.im0513dd.getText().toString());
+        immunization.setIm0513mm(bi.im0513mm.getText().toString().isEmpty() ? "-1" : bi.im0513mm.getText().toString());
+        immunization.setIm0513yy(bi.im0513yy.getText().toString().isEmpty() ? "-1" : bi.im0513yy.getText().toString());
+        immunization.setIm0514dd(bi.im0514dd.getText().toString().isEmpty() ? "-1" : bi.im0514dd.getText().toString());
+        immunization.setIm0514mm(bi.im0514mm.getText().toString().isEmpty() ? "-1" : bi.im0514mm.getText().toString());
+        immunization.setIm0514yy(bi.im0514yy.getText().toString().isEmpty() ? "-1" : bi.im0514yy.getText().toString());
+        immunization.setIm0515dd(bi.im0515dd.getText().toString().isEmpty() ? "-1" : bi.im0515dd.getText().toString());
+        immunization.setIm0515mm(bi.im0515mm.getText().toString().isEmpty() ? "-1" : bi.im0515mm.getText().toString());
+        immunization.setIm0515yy(bi.im0515yy.getText().toString().isEmpty() ? "-1" : bi.im0515yy.getText().toString());
+        immunization.setIm0516dd(bi.im0516dd.getText().toString().isEmpty() ? "-1" : bi.im0516dd.getText().toString());
+        immunization.setIm0516mm(bi.im0516mm.getText().toString().isEmpty() ? "-1" : bi.im0516mm.getText().toString());
+        immunization.setIm0516yy(bi.im0516yy.getText().toString().isEmpty() ? "-1" : bi.im0516yy.getText().toString());
 
-        MainApp.immunization.setIm07(bi.im0701.isChecked() ? "1"
+        immunization.setIm07(bi.im0701.isChecked() ? "1"
                 : bi.im0702.isChecked() ? "2"
                 : "-1");
 
-        MainApp.immunization.setIm08(bi.im0801.isChecked() ? "1"
+        immunization.setIm08(bi.im0801.isChecked() ? "1"
                 : bi.im0802.isChecked() ? "2"
                 : bi.im0803.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm09(bi.im0901.isChecked() ? "1"
+        immunization.setIm09(bi.im0901.isChecked() ? "1"
                 : bi.im0902.isChecked() ? "2"
                 : bi.im0903.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm10(bi.im1001.isChecked() ? "1"
+        immunization.setIm10(bi.im1001.isChecked() ? "1"
                 : bi.im1002.isChecked() ? "2"
                 : bi.im1003.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm11(bi.im1101.isChecked() ? "1"
+        immunization.setIm11(bi.im1101.isChecked() ? "1"
                 : bi.im1102.isChecked() ? "2"
                 : bi.im1103.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm12(bi.im12.getText().toString().isEmpty() ? "-1" : bi.im12.getText().toString());
-        MainApp.immunization.setIm1298(bi.im1298.isChecked() ? "98" : "-1");
+        immunization.setIm12(bi.im12.getText().toString().isEmpty() ? "-1" : bi.im12.getText().toString());
+        immunization.setIm1298(bi.im1298.isChecked() ? "98" : "-1");
 
-        MainApp.immunization.setIm14(bi.im1401.isChecked() ? "1"
+        immunization.setIm14(bi.im1401.isChecked() ? "1"
                 : bi.im1402.isChecked() ? "2"
                 : bi.im1403.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm15(bi.im15.getText().toString().isEmpty() ? "-1" : bi.im15.getText().toString());
-        MainApp.immunization.setIm1598(bi.im1598.isChecked() ? "98" : "-1");
+        immunization.setIm15(bi.im15.getText().toString().isEmpty() ? "-1" : bi.im15.getText().toString());
+        immunization.setIm1598(bi.im1598.isChecked() ? "98" : "-1");
 
-        MainApp.immunization.setIm16(bi.im1601.isChecked() ? "1"
+        immunization.setIm16(bi.im1601.isChecked() ? "1"
                 : bi.im1602.isChecked() ? "2"
                 : bi.im1603.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm17(bi.im17.getText().toString().isEmpty() ? "-1" : bi.im17.getText().toString());
-        MainApp.immunization.setIm1798(bi.im1798.isChecked() ? "98" : "-1");
+        immunization.setIm17(bi.im17.getText().toString().isEmpty() ? "-1" : bi.im17.getText().toString());
+        immunization.setIm1798(bi.im1798.isChecked() ? "98" : "-1");
 
-        MainApp.immunization.setIm18(bi.im1801.isChecked() ? "1"
+        immunization.setIm18(bi.im1801.isChecked() ? "1"
                 : bi.im1802.isChecked() ? "2"
                 : bi.im1803.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm19(bi.im19.getText().toString().isEmpty() ? "-1" : bi.im19.getText().toString());
-        MainApp.immunization.setIm1998(bi.im1998.isChecked() ? "98" : "-1");
+        immunization.setIm19(bi.im19.getText().toString().isEmpty() ? "-1" : bi.im19.getText().toString());
+        immunization.setIm1998(bi.im1998.isChecked() ? "98" : "-1");
 
-        MainApp.immunization.setIm20(bi.im2001.isChecked() ? "1"
+        immunization.setIm20(bi.im2001.isChecked() ? "1"
                 : bi.im2002.isChecked() ? "2"
                 : bi.im2003.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm21(bi.im2101.isChecked() ? "1"
+        immunization.setIm21(bi.im2101.isChecked() ? "1"
                 : bi.im2102.isChecked() ? "2"
                 : bi.im2103.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm22(bi.im22.getText().toString().isEmpty() ? "-1" : bi.im22.getText().toString());
-        MainApp.immunization.setIm2298(bi.im2298.isChecked() ? "98" : "-1");
+        immunization.setIm22(bi.im22.getText().toString().isEmpty() ? "-1" : bi.im22.getText().toString());
+        immunization.setIm2298(bi.im2298.isChecked() ? "98" : "-1");
 
-        MainApp.immunization.setIm23(bi.im2301.isChecked() ? "1"
+        immunization.setIm23(bi.im2301.isChecked() ? "1"
                 : bi.im2302.isChecked() ? "2"
                 : bi.im2303.isChecked() ? "3"
                 : bi.im2304.isChecked() ? "4"
                 : bi.im2306.isChecked() ? "96"
                 : "-1");
-        MainApp.immunization.setIm2306x(bi.im2306x.getText().toString().isEmpty() ? "-1" : bi.im2306x.getText().toString());
+        immunization.setIm2306x(bi.im2306x.getText().toString().isEmpty() ? "-1" : bi.im2306x.getText().toString());
 
-        MainApp.immunization.setIm23a(bi.im23a1.isChecked() ? "1"
+        immunization.setIm23a(bi.im23a1.isChecked() ? "1"
                 : bi.im23a2.isChecked() ? "2"
                 : bi.im23a3.isChecked() ? "3"
                 : bi.im23a4.isChecked() ? "4"
                 : bi.im23a5.isChecked() ? "5"
                 : bi.im23a96.isChecked() ? "96"
                 : "-1");
-        MainApp.immunization.setIm23a96x(bi.im23a96x.getText().toString().isEmpty() ? "-1" : bi.im23a96x.getText().toString());
+        immunization.setIm23a96x(bi.im23a96x.getText().toString().isEmpty() ? "-1" : bi.im23a96x.getText().toString());
 
-        MainApp.immunization.setIm23b1(bi.im23b1.getText().toString().isEmpty() ? "-1" : bi.im23b1.getText().toString());
-        MainApp.immunization.setIm23b2(bi.im23b2.getText().toString().isEmpty() ? "-1" : bi.im23b2.getText().toString());
+        immunization.setIm23b1(bi.im23b1.getText().toString().isEmpty() ? "-1" : bi.im23b1.getText().toString());
+        immunization.setIm23b2(bi.im23b2.getText().toString().isEmpty() ? "-1" : bi.im23b2.getText().toString());
 
-        MainApp.immunization.setIm24(bi.im2401.isChecked() ? "1"
+        immunization.setIm24(bi.im2401.isChecked() ? "1"
                 : bi.im2402.isChecked() ? "2"
                 : bi.im2403.isChecked() ? "3"
                 : bi.im2404.isChecked() ? "4"
@@ -277,48 +276,48 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
                 : bi.im2498.isChecked() ? "98"
                 : bi.im2496.isChecked() ? "96"
                 : "-1");
-        MainApp.immunization.setIm2496x(bi.im2496x.getText().toString().isEmpty() ? "-1" : bi.im2496x.getText().toString());
+        immunization.setIm2496x(bi.im2496x.getText().toString().isEmpty() ? "-1" : bi.im2496x.getText().toString());
 
-        MainApp.immunization.setIm25(bi.im2501.isChecked() ? "1"
+        immunization.setIm25(bi.im2501.isChecked() ? "1"
                 : bi.im2502.isChecked() ? "2"
                 : bi.im2503.isChecked() ? "3"
                 : bi.im2504.isChecked() ? "4"
                 : "-1");
 
-        MainApp.immunization.setIm26(bi.im26a.isChecked() ? "1"
+        immunization.setIm26(bi.im26a.isChecked() ? "1"
                 : bi.im26b.isChecked() ? "2"
                 : bi.im2698.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm27(bi.im27.getText().toString().isEmpty() ? "-1" : bi.im27.getText().toString());
-        MainApp.immunization.setIm2798(bi.im2798.isChecked() ? "98" : "-1");
+        immunization.setIm27(bi.im27.getText().toString().isEmpty() ? "-1" : bi.im27.getText().toString());
+        immunization.setIm2798(bi.im2798.isChecked() ? "98" : "-1");
 
-        MainApp.immunization.setIm28(bi.im28a.isChecked() ? "1"
+        immunization.setIm28(bi.im28a.isChecked() ? "1"
                 : bi.im28b.isChecked() ? "2"
                 : bi.im2898.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm29(bi.im29a.isChecked() ? "1"
+        immunization.setIm29(bi.im29a.isChecked() ? "1"
                 : bi.im29b.isChecked() ? "2"
                 : bi.im2998.isChecked() ? "98"
                 : "-1");
 
-        MainApp.immunization.setIm30a(bi.im30a.isChecked() ? "1" : "-1");
-        MainApp.immunization.setIm30b(bi.im30b.isChecked() ? "2" : "-1");
-        MainApp.immunization.setIm30c(bi.im30c.isChecked() ? "3" : "-1");
-        MainApp.immunization.setIm30d(bi.im30d.isChecked() ? "4" : "-1");
-        MainApp.immunization.setIm30e(bi.im30e.isChecked() ? "5" : "-1");
-        MainApp.immunization.setIm30f(bi.im30f.isChecked() ? "6" : "-1");
-        MainApp.immunization.setIm30g(bi.im30g.isChecked() ? "7" : "-1");
-        MainApp.immunization.setIm30h(bi.im30h.isChecked() ? "8" : "-1");
-        MainApp.immunization.setIm30i(bi.im30i.isChecked() ? "9" : "-1");
-        MainApp.immunization.setIm30j(bi.im30j.isChecked() ? "10" : "-1");
-        MainApp.immunization.setIm30k(bi.im30k.isChecked() ? "11" : "-1");
-        MainApp.immunization.setIm30l(bi.im30l.isChecked() ? "12" : "-1");
-        MainApp.immunization.setIm30m(bi.im30m.isChecked() ? "13" : "-1");
-        MainApp.immunization.setIm3098(bi.im3098.isChecked() ? "98" : "-1");
-        MainApp.immunization.setIm3096(bi.im3096.isChecked() ? "96" : "-1");
-        MainApp.immunization.setIm3096x(bi.im3096x.getText().toString().isEmpty() ? "-1" : bi.im3096x.getText().toString());
+        immunization.setIm30a(bi.im30a.isChecked() ? "1" : "-1");
+        immunization.setIm30b(bi.im30b.isChecked() ? "2" : "-1");
+        immunization.setIm30c(bi.im30c.isChecked() ? "3" : "-1");
+        immunization.setIm30d(bi.im30d.isChecked() ? "4" : "-1");
+        immunization.setIm30e(bi.im30e.isChecked() ? "5" : "-1");
+        immunization.setIm30f(bi.im30f.isChecked() ? "6" : "-1");
+        immunization.setIm30g(bi.im30g.isChecked() ? "7" : "-1");
+        immunization.setIm30h(bi.im30h.isChecked() ? "8" : "-1");
+        immunization.setIm30i(bi.im30i.isChecked() ? "9" : "-1");
+        immunization.setIm30j(bi.im30j.isChecked() ? "10" : "-1");
+        immunization.setIm30k(bi.im30k.isChecked() ? "11" : "-1");
+        immunization.setIm30l(bi.im30l.isChecked() ? "12" : "-1");
+        immunization.setIm30m(bi.im30m.isChecked() ? "13" : "-1");
+        immunization.setIm3098(bi.im3098.isChecked() ? "98" : "-1");
+        immunization.setIm3096(bi.im3096.isChecked() ? "96" : "-1");
+        immunization.setIm3096x(bi.im3096x.getText().toString().isEmpty() ? "-1" : bi.im3096x.getText().toString());
 
 
     }
@@ -530,7 +529,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 //            Clear.clearAllFields(bi.fldGrpDOBCheck02);
         }
         saveDraft();
-        MainApp.immunization.setStatus("1");
+        immunization.setStatus("1");
         if (updateDB()) {
             finish();
             if ((info.getIsSelected().equals("1") || info.getIsSelected().equals("2")) && info.isMotherAvailable())
@@ -543,13 +542,13 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
 
     private Boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.dbHelper;
-        long updcount = db.addIM(MainApp.immunization);
-        MainApp.immunization.setId(String.valueOf(updcount));
+        long updcount = db.addIM(immunization);
+        immunization.setId(String.valueOf(updcount));
         if (updcount > 0) {
-            MainApp.immunization.setUid(MainApp.immunization.getDeviceId() + MainApp.immunization.getId());
-            long count = db.updatesIMColumn(IMContract.IMTable.COLUMN_UID, MainApp.immunization.getUid());
+            immunization.setUid(immunization.getDeviceId() + immunization.getId());
+            long count = db.updatesIMColumn(IMContract.IMTable.COLUMN_UID, immunization.getUid());
             if (count > 0)
-                count = db.updatesIMColumn(IMContract.IMTable.COLUMN_SIM, MainApp.immunization.s04IMtoString());
+                count = db.updatesIMColumn(IMContract.IMTable.COLUMN_SIM, immunization.s04IMtoString());
             //count = db.updatesIMColumn(IMContract.IMTable.COLUMN_SIM, MainApp.immunization.getSim());
             if (count > 0) return true;
             else {
@@ -593,14 +592,14 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
     }
 
 
-    public void takePhoto(int id) {
+    public void takePhoto(View v) {
 
         Intent intent = new Intent(this, TakePhoto.class);
 
         intent.putExtra("picID", info.getCluster() + "_" + info.getHhno() + "_" + info.getCb01() + "_");
         intent.putExtra("childName", info.getCb02());
 
-        if (id == 1) {
+        if (v.getId() == bi.frontPhoto.getId()) {
             intent.putExtra("picView", "front".toUpperCase());
             startActivityForResult(intent, 1); // Activity is started with requestCode 1 = Front
         } else {
@@ -928,7 +927,7 @@ public class Section04IMActivity extends AppCompatActivity implements EndSection
     @Override
     public void endSecActivity(boolean flag) {
         saveDraft();
-        MainApp.immunization.setStatus("2");
+        immunization.setStatus("2");
         if (updateDB()) {
             finish();
         }
