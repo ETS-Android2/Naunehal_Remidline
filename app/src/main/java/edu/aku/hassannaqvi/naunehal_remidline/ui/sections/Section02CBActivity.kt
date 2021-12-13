@@ -13,7 +13,6 @@ import androidx.databinding.DataBindingUtil
 import com.edittextpicker.aliazaz.EditTextPicker
 import com.validatorcrawler.aliazaz.Clear
 import com.validatorcrawler.aliazaz.Validator
-import edu.aku.hassannaqvi.naunehal_remidline.BR
 import edu.aku.hassannaqvi.naunehal_remidline.R
 import edu.aku.hassannaqvi.naunehal_remidline.contracts.ChildInformationContract
 import edu.aku.hassannaqvi.naunehal_remidline.core.MainApp
@@ -42,7 +41,6 @@ class Section02CBActivity : AppCompatActivity() {
         // TODO: After itemClick on childlist fetchChildByUID() from TABLE_FAMILY and update contents MainApp.Family before entering this activity.
         if (MainApp.form.hh14 == "1") bi.cb0601.isEnabled = false
         else bi.cb0602.isEnabled = false
-        bi.setVariable(BR.childInformation, MainApp.childInformation)
         setupSkips()
 
         /*
@@ -238,100 +236,6 @@ class Section02CBActivity : AppCompatActivity() {
             MainApp.childInformation.deviceTag = MainApp.appInfo.tagName
             MainApp.childInformation.appver = MainApp.appInfo.appVersion
         }
-
-        MainApp.childInformation.cb15 = bi.cb15.text.toString()
-        MainApp.childInformation.cb1598 = if (bi.cb1598.isChecked) "98" else "-1"
-
-        MainApp.childInformation.cb17 = when {
-            bi.cb1701.isChecked -> "1"
-            bi.cb1702.isChecked -> "2"
-            bi.cb1703.isChecked -> "3"
-            bi.cb1704.isChecked -> "4"
-            bi.cb1705.isChecked -> "5"
-            bi.cb1798.isChecked -> "98"
-            else -> "-1"
-        }
-
-        MainApp.childInformation.cb01 = bi.cb01.text.toString()
-
-        MainApp.childInformation.cb02 = bi.cb02.text.toString()
-
-        MainApp.childInformation.cb03 =
-            if (bi.cb0301.isChecked) "1" else if (bi.cb0302.isChecked) "2" else "-1"
-
-        MainApp.childInformation.cb04dd = bi.cb04dd.text.toString()
-        MainApp.childInformation.cb04mm = bi.cb04mm.text.toString()
-        MainApp.childInformation.cb04yy = bi.cb04yy.text.toString()
-        MainApp.childInformation.cb0501 = bi.cb0501.text.toString()
-        MainApp.childInformation.cb0502 = bi.cb0502.text.toString()
-
-        MainApp.childInformation.cb06 = when {
-            bi.cb0601.isChecked -> "1"
-            bi.cb0602.isChecked -> "2"
-            bi.cb0603.isChecked -> "3"
-            bi.cb0696.isChecked -> "4"
-            else -> "-1"
-        }
-
-        MainApp.childInformation.cb07 = bi.cb07.text.toString()
-
-        MainApp.childInformation.cb08 = bi.cb08.text.toString()
-
-        MainApp.childInformation.cb09 = bi.cb09.text.toString()
-
-        MainApp.childInformation.cb10 = when {
-            bi.cb1001.isChecked -> "1"
-            bi.cb1002.isChecked -> "2"
-            bi.cb1003.isChecked -> "3"
-            bi.cb1004.isChecked -> "4"
-            bi.cb1005.isChecked -> "5"
-            bi.cb1006.isChecked -> "6"
-            bi.cb1007.isChecked -> "7"
-            bi.cb1008.isChecked -> "8"
-            bi.cb1009.isChecked -> "9"
-            bi.cb1010.isChecked -> "10"
-            bi.cb1011.isChecked -> "11"
-            bi.cb1012.isChecked -> "12"
-            bi.cb1013.isChecked -> "13"
-            bi.cb1096.isChecked -> "96"
-            else -> "-1"
-        }
-
-        MainApp.childInformation.cb1096x = bi.cb1096x.text.toString()
-        MainApp.childInformation.cb11 = when {
-            bi.cb1101.isChecked -> "1"
-            bi.cb1102.isChecked -> "2"
-            else -> "-1"
-        }
-
-        MainApp.childInformation.cb12 = bi.cb12.text.toString()
-
-        MainApp.childInformation.cb13 = bi.cb13.text.toString()
-
-        MainApp.childInformation.cb14 = when {
-            bi.cb1401.isChecked -> "1"
-            bi.cb1402.isChecked -> "2"
-            bi.cb1403.isChecked -> "3"
-            bi.cb1404.isChecked -> "4"
-            bi.cb1405.isChecked -> "5"
-            bi.cb1406.isChecked -> "6"
-            bi.cb1407.isChecked -> "7"
-            bi.cb1408.isChecked -> "8"
-            bi.cb1409.isChecked -> "9"
-            bi.cb1410.isChecked -> "10"
-            bi.cb1411.isChecked -> "11"
-            bi.cb1412.isChecked -> "12"
-            bi.cb1413.isChecked -> "13"
-            bi.cb1496.isChecked -> "96"
-            else -> "-1"
-        }
-
-        MainApp.childInformation.cb1496x = bi.cb1496x.text.toString()
-        MainApp.childInformation.cb15 = bi.cb15.text.toString()
-
-        MainApp.childInformation.cb16 =
-            if (bi.cb1601.isChecked) "1" else if (bi.cb1602.isChecked) "2" else if (bi.cb1603.isChecked) "3" else "-1"
-
 
     }
 
