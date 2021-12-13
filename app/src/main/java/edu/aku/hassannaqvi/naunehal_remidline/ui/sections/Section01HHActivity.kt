@@ -54,9 +54,9 @@ class Section01HHActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_01hh)
-        bi.callback
+        bi.form = form
         setSupportActionBar(bi.toolbar)
-        bi.aa01.setMinDate(getDaysBack("dd/MM/yyyy", -7))
+        bi.hh01.setMinDate(getDaysBack("dd/MM/yyyy", -7))
 
         /*
         * Obtaining ViewModel
@@ -421,7 +421,7 @@ class Section01HHActivity : AppCompatActivity() {
 
         //Setting Date
         try {
-            bi.aa01.text?.let {
+            bi.hh01.text?.let {
                 val instant = Instant.parse(
                     SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
                         .format(
@@ -437,7 +437,7 @@ class Section01HHActivity : AppCompatActivity() {
 
 
         form.hh01 = when {
-            bi.aa01.text.toString().trim().isNotEmpty() -> bi.aa01.text.toString()
+            bi.hh01.text.toString().trim().isNotEmpty() -> bi.hh01.text.toString()
             else -> "-1"
         }
 

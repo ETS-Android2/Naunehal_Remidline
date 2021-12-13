@@ -8,8 +8,9 @@
         <import type="android.view.View" />
 
         <variable
-            name="callback"
-            type="edu.aku.hassannaqvi.naunehal_remidline.ui.sections.Section01HHActivity" />
+            name="form"
+            type="edu.aku.hassannaqvi.naunehal_remidline.models.Form" />
+
     </data>
 
 
@@ -267,10 +268,11 @@
                             </LinearLayout>
 
                             <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
-                                android:id="@+id/aa01"
+                                android:id="@+id/hh01"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
+                                android:text="@={form.hh01}"
                                 android:hint="DD-MM-YYYY"
                                 app:dateFormat="dd-MM-yyyy"
                                 app:maxDate="CR_DATE"
@@ -323,6 +325,7 @@
                                     android:layout_height="wrap_content"
                                     android:focusable="false"
                                     android:gravity="center"
+                                    android:text="@={form.hh0201}"
                                     android:hint="HH:mm"
                                     app:theme="@style/DatePickerStyle" />
 
