@@ -433,6 +433,8 @@ public class Child extends BaseObservable {
 
     public void setCs07(String cs07) {
         this.cs07 = cs07;
+        setCs07961x(cs07.equals("961") ? this.cs07961x : "");
+        setCs07962x(cs07.equals("962") ? this.cs07962x : "");
         notifyPropertyChanged(BR.cs07);
     }
 
@@ -472,6 +474,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0801(String cs0801) {
+        if (this.cs0801.equals(cs0801)) return;
         this.cs0801 = cs0801;
         notifyPropertyChanged(BR.cs0801);
     }
@@ -482,6 +485,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0802(String cs0802) {
+        if (this.cs0802.equals(cs0802)) return;
         this.cs0802 = cs0802;
         notifyPropertyChanged(BR.cs0802);
     }
@@ -492,6 +496,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0803(String cs0803) {
+        if (this.cs0803.equals(cs0803)) return;
         this.cs0803 = cs0803;
         notifyPropertyChanged(BR.cs0803);
     }
@@ -502,6 +507,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0804(String cs0804) {
+        if (this.cs0804.equals(cs0804)) return;
         this.cs0804 = cs0804;
         notifyPropertyChanged(BR.cs0804);
     }
@@ -512,6 +518,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0805(String cs0805) {
+        if (this.cs0805.equals(cs0805)) return;
         this.cs0805 = cs0805;
         notifyPropertyChanged(BR.cs0805);
     }
@@ -522,6 +529,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0806(String cs0806) {
+        if (this.cs0806.equals(cs0806)) return;
         this.cs0806 = cs0806;
         notifyPropertyChanged(BR.cs0806);
     }
@@ -532,6 +540,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0807(String cs0807) {
+        if (this.cs0807.equals(cs0807)) return;
         this.cs0807 = cs0807;
         notifyPropertyChanged(BR.cs0807);
     }
@@ -542,6 +551,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0808(String cs0808) {
+        if (this.cs0808.equals(cs0808)) return;
         this.cs0808 = cs0808;
         notifyPropertyChanged(BR.cs0808);
     }
@@ -552,6 +562,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0809(String cs0809) {
+        if (this.cs0809.equals(cs0809)) return;
         this.cs0809 = cs0809;
         notifyPropertyChanged(BR.cs0809);
     }
@@ -562,6 +573,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0810(String cs0810) {
+        if (this.cs0810.equals(cs0810)) return;
         this.cs0810 = cs0810;
         notifyPropertyChanged(BR.cs0810);
     }
@@ -572,9 +584,10 @@ public class Child extends BaseObservable {
     }
 
     public void setCs0896(String cs0896) {
+        if (this.cs0896.equals(cs0896)) return;
         this.cs0896 = cs0896;
+        setCs0896x(cs0896.equals("96") ? this.cs0896x : "");
         notifyPropertyChanged(BR.cs0896);
-        notifyPropertyChanged(BR.cs0896x);
     }
 
     @Bindable
@@ -617,6 +630,7 @@ public class Child extends BaseObservable {
 
     public void setCs09(String cs09) {
         this.cs09 = cs09;
+        setCs0996x(cs09.equals("96") ? this.cs0996x : "");
         notifyPropertyChanged(BR.cs09);
     }
 
@@ -687,6 +701,7 @@ public class Child extends BaseObservable {
 
     public void setCs15(String cs15) {
         this.cs15 = cs15;
+        setCs1596x(cs15.equals("96") ? this.cs1596x : "");
         notifyPropertyChanged(BR.cs15);
     }
 
@@ -717,6 +732,8 @@ public class Child extends BaseObservable {
 
     public void setCs17(String cs17) {
         this.cs17 = cs17;
+        setCs17961x(cs17.equals("961") ? this.cs17961x : "");
+        setCs17962x(cs17.equals("962") ? this.cs17962x : "");
         notifyPropertyChanged(BR.cs17);
     }
 
@@ -748,6 +765,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs1802(String cs1802) {
+        if (this.cs1802.equals(cs1802)) return;
         this.cs1802 = cs1802;
         notifyPropertyChanged(BR.cs1802);
     }
@@ -759,6 +777,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs1803(String cs1803) {
+        if (this.cs1803.equals(cs1803)) return;
         this.cs1803 = cs1803;
         notifyPropertyChanged(BR.cs1803);
     }
@@ -770,6 +789,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs1804(String cs1804) {
+        if (this.cs1804.equals(cs1804)) return;
         this.cs1804 = cs1804;
         notifyPropertyChanged(BR.cs1804);
     }
@@ -781,6 +801,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs1805(String cs1805) {
+        if (this.cs1805.equals(cs1805)) return;
         this.cs1805 = cs1805;
         notifyPropertyChanged(BR.cs1805);
     }
@@ -792,6 +813,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs1806(String cs1806) {
+        if (this.cs1806.equals(cs1806)) return;
         this.cs1806 = cs1806;
         notifyPropertyChanged(BR.cs1806);
     }
@@ -803,6 +825,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs1807(String cs1807) {
+        if (this.cs1807.equals(cs1807)) return;
         this.cs1807 = cs1807;
         notifyPropertyChanged(BR.cs1807);
     }
@@ -814,6 +837,7 @@ public class Child extends BaseObservable {
     }
 
     public void setCs1808(String cs1808) {
+        if (this.cs1808.equals(cs1808)) return;
         this.cs1808 = cs1808;
         notifyPropertyChanged(BR.cs1808);
     }
@@ -825,7 +849,9 @@ public class Child extends BaseObservable {
     }
 
     public void setCs1896(String cs1896) {
+        if (this.cs1896.equals(cs1896)) return;
         this.cs1896 = cs1896;
+        setCs1896x(cs1896.equals("96") ? this.cs1896x : "");
         notifyPropertyChanged(BR.cs1896);
     }
 

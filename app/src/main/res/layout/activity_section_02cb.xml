@@ -278,7 +278,7 @@
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
-                                android:onTextChanged="@{callback::cb04yyOnTextChanged}"
+                                android:onTextChanged="cb04yyOnTextChanged"
                                 android:text="@={cinfo.cb04yy}"
                                 app:defaultValue="9998"
                                 app:maxValue="2021"
@@ -483,52 +483,59 @@
                         <RadioGroup
                             android:id="@+id/cb17"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/cb1701"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{cinfo.cb17.equals(`1`)}"
                                 android:onClick="@{()->cinfo.setCb17(`1`)}"
                                 android:text="@string/cb1701" />
 
                             <RadioButton
                                 android:id="@+id/cb1702"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{cinfo.cb17.equals(`2`)}"
                                 android:onClick="@{()->cinfo.setCb17(`2`)}"
                                 android:text="@string/cb1702" />
 
                             <RadioButton
                                 android:id="@+id/cb1703"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{cinfo.cb17.equals(`3`)}"
                                 android:onClick="@{()->cinfo.setCb17(`3`)}"
                                 android:text="@string/cb1703" />
 
                             <RadioButton
                                 android:id="@+id/cb1704"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{cinfo.cb17.equals(`4`)}"
                                 android:onClick="@{()->cinfo.setCb17(`4`)}"
                                 android:text="@string/cb1704" />
 
                             <RadioButton
                                 android:id="@+id/cb1705"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{cinfo.cb17.equals(`5`)}"
                                 android:onClick="@{()->cinfo.setCb17(`5`)}"
                                 android:text="@string/cb1705" />
 
                             <RadioButton
                                 android:id="@+id/cb1798"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{cinfo.cb17.equals(`98`)}"
                                 android:onClick="@{()->cinfo.setCb17(`98`)}"
                                 android:text="@string/cb1798" />

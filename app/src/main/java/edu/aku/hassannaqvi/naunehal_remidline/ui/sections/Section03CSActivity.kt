@@ -48,7 +48,7 @@ class Section03CSActivity : AppCompatActivity(), EndSectionActivity {
             info.cb07,
             info.uid
         )
-        bi.callback
+        bi.child = MainApp.child
         setSupportActionBar(bi.toolbar)
         selectedChildInfo = info
         setupSkips()
