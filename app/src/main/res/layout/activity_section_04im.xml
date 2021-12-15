@@ -2406,7 +2406,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:checked="@{imun.im10.equals(`2`)}"
-                                        android:onClick="@{()->imun.setIm10(`2`)}"
+                                        android:onClick="@{()->imun.setIm10(`2`) + im11.clearCheck()}"
                                         android:text="@string/im1002" />
 
                                     <RadioButton
@@ -2415,7 +2415,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:checked="@{imun.im10.equals(`3`)}"
-                                        android:onClick="@{()->imun.setIm10(`3`)}"
+                                        android:onClick="@{()->imun.setIm10(`3`) + im11.clearCheck()}"
                                         android:text="@string/im1003" />
 
                                 </RadioGroup>
@@ -2430,7 +2430,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:visibility='@{!im1001.checked ? View.GONE : View.VISIBLE}'>
+                            android:visibility="@{imun.im10.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <!-- im11  Radio   -->
                             <androidx.cardview.widget.CardView style="@style/cardView">
@@ -2642,7 +2642,7 @@
                         <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpim15"
                             style="@style/cardView"
-                            android:visibility='@{im1401.checked ? View.VISIBLE : View.GONE}'>
+                            android:visibility="@{imun.im14.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -2683,12 +2683,12 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:enabled="@{im1598.checked ? false : true}"
+                                        android:enabled="@{!imun.im1598.equals(`98`)}"
                                         android:gravity="center"
                                         android:hint="#"
                                         android:inputType="number"
                                         android:maxLength="1"
-                                        android:text="@{im1598.checked ? `` : im15.getText().toString()}"
+                                        android:text="@={imun.im15}"
                                         app:maxValue="9"
                                         app:minValue="1"
                                         app:type="range" />
@@ -2698,6 +2698,8 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:tag="-1"
+                                        android:checked="@{imun.im1598.equals(`98`)}"
+                                        android:onClick="@{()->imun.setIm1598(imun.im1598.equals(`98`)?``:`98`)}"
                                         android:text="@string/im1598" />
 
                                 </LinearLayout>
@@ -2745,6 +2747,8 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
+                                        android:checked="@{imun.im16.equals(`1`)}"
+                                        android:onClick="@{()->imun.setIm16(`1`)}"
                                         android:text="@string/im1601" />
 
                                     <RadioButton
@@ -2752,6 +2756,8 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
+                                        android:checked="@{imun.im16.equals(`2`)}"
+                                        android:onClick="@{()->imun.setIm16(`2`)}"
                                         android:text="@string/im1602" />
 
                                     <RadioButton
@@ -2759,6 +2765,8 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
+                                        android:checked="@{imun.im16.equals(`3`)}"
+                                        android:onClick="@{()->imun.setIm16(`3`)}"
                                         android:text="@string/im1603" />
 
                                 </RadioGroup>
@@ -2772,7 +2780,7 @@
                         <androidx.cardview.widget.CardView
                             android:id="@+id/fldGrpim17"
                             style="@style/cardView"
-                            android:visibility='@{im1601.checked ? View.VISIBLE : View.GONE}'>
+                            android:visibility="@{imun.im16.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -2813,12 +2821,12 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:enabled="@{im1798.checked ? false : true}"
+                                        android:enabled="@{!imun.im1798.equals(`98`)"
                                         android:gravity="center"
                                         android:hint="#"
                                         android:inputType="number"
                                         android:maxLength="1"
-                                        android:text="@{im1798.checked ? `` : im17.getText().toString()}"
+                                        android:text="@={imun.im17}"
                                         app:maxValue="9"
                                         app:minValue="1"
                                         app:type="range" />
@@ -2828,6 +2836,8 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:tag="-1"
+                                        android:checked="@{imun.im1798.equals(`98`)}"
+                                        android:onClick="@{()->imun.setIm1798(imun.im1798.equals(`98`)?``:`98`)}"
                                         android:text="@string/im1798" />
 
                                 </LinearLayout>

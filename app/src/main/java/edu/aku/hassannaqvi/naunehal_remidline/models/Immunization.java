@@ -970,6 +970,9 @@ public class Immunization extends BaseObservable {
 
     public void setIm10(String im10) {
         this.im10 = im10;
+        setIm11(im10.equals("1") ? this.im11 : "");
+        setIm12(im10.equals("1") ? this.im12 : "");
+        setIm1298(im10.equals("1") ? this.im1298 : "");
         notifyPropertyChanged(BR.im10);
     }
 
@@ -1013,6 +1016,8 @@ public class Immunization extends BaseObservable {
 
     public void setIm14(String im14) {
         this.im14 = im14;
+        setIm15(im14.equals("1") ? this.im15 : "");
+        setIm1598(im14.equals("1") ? this.im1598 : "");
         notifyPropertyChanged(BR.im14);
     }
 
@@ -1032,7 +1037,9 @@ public class Immunization extends BaseObservable {
     }
 
     public void setIm1598(String im1598) {
+        if (this.im1598.equals(im1598)) return;
         this.im1598 = im1598;
+        setIm15(im1598.equals("98") ? "" : im15);
         notifyPropertyChanged(BR.im1598);
     }
 
@@ -1043,6 +1050,8 @@ public class Immunization extends BaseObservable {
 
     public void setIm16(String im16) {
         this.im16 = im16;
+        setIm17(im16.equals("1") ? this.im17 : "");
+        setIm1798(im16.equals("1") ? this.im1798 : "");
         notifyPropertyChanged(BR.im16);
     }
 
@@ -1062,7 +1071,9 @@ public class Immunization extends BaseObservable {
     }
 
     public void setIm1798(String im1798) {
+        if (this.im1798.equals(im1798)) return;
         this.im1798 = im1798;
+        setIm17(im1798.equals("98") ? "" : im17);
         notifyPropertyChanged(BR.im1798);
     }
 
