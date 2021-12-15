@@ -1000,7 +1000,9 @@ public class Immunization extends BaseObservable {
     }
 
     public void setIm1298(String im1298) {
+        if (this.im1298.equals(im1298)) return;
         this.im1298 = im1298;
+        setIm12(im1298.equals("98") ? "" : im12);
         notifyPropertyChanged(BR.im1298);
     }
 
